@@ -1,8 +1,6 @@
 -- drone.lua
 -- A simple runtime for OpenComputers drones. Exposes a simple API to the extras file.
 
-drone.setStatusText "Hi."
-
 local comp, ta, str = computer, table, string
 function sleep(timeout)
    local deadline = comp.uptime() + (timeout or 0)
