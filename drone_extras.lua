@@ -131,7 +131,7 @@ end
 
 local function chat_control()
   while true do
-    ev = {coro_yield()}
+    ev = {coroutine.yield()}
     -- Yes, there is no filtering, so maybe it won't be a chat message. There is parsing later though, which makes these risks small.
     status "Detected"
 
