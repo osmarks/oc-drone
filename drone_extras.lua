@@ -17,7 +17,7 @@ local command_prefix = drone_name .. ","
 
 local function split(inputstr, sep)
   local parts = {}
-  for str in str.gmatch(inputstr, "([^"..sep.."]+)") do
+  for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
     table.insert(parts, str)
   end
   return parts
@@ -144,10 +144,10 @@ local function chat_control()
 
       sleep()
 
-      message = str.gsub(message, "%.", "")
+      message = string.gsub(message, "%.", "")
       status(message)
 
-      for w in str.gmatch(message, "%S+") do
+      for w in string.gmatch(message, "%S+") do
         table.insert(args, w)
         sleep()
       end
