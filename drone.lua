@@ -21,8 +21,8 @@ cam = part "camera"
 nav = part "navigation"
 interweb = part "internet"
 bios = part "eeprom"
-local code_addr = pastebin .. "drone.lua"
-local extra_addr = pastebin .. "drone_extras.lua"
+local code_addr = repo .. "drone.lua"
+local extra_addr = repo .. "drone_extras.lua"
 local speak, status = chat.say, drone.setStatusText
 status "Bound"
 
