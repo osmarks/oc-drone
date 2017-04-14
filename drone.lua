@@ -1,6 +1,8 @@
 -- drone.lua
 -- A simple runtime for OpenComputers drones. Exposes a simple API to the extras file.
 
+drone.setStatusText "Hi."
+
 local comp, ta, str = computer, table, string
 function sleep(timeout)
    local deadline = comp.uptime() + (timeout or 0)
@@ -111,7 +113,7 @@ local resumecoro = coroutine.resume
 local coros = {}
 
 function register_coro(func, recv_events)
-  ta.insert(coros, {thread = createcoro(func), event = recv_events})
+  ta.insert(coros, {thread = coroutine.create(func), event = recv_events})
 end
 
 -- At this point we download the extras file & execute it. The extras file should add its coroutines.
