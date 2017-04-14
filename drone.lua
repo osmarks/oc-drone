@@ -11,7 +11,7 @@ function sleep(timeout)
   until comp.uptime() >= deadline
 end
 
-local function part(name)
+function part(name)
   return component.proxy(component.list(name)())
 end
 
